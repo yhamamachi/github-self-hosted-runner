@@ -9,7 +9,7 @@ services:
       RUNNER_SCOPE: repo
       REPO_URL: ${GH_RUNNER_REPO}
       LABELS: my-runner
-      ACCESS_TOKEN: ${GH_PAT}
+      ACCESS_TOKEN: ${GH_RUNNER_PAT}
       EPHEMERAL: 1
       RUN_AS_ROOT: false
     volumes:
