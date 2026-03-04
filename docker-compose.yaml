@@ -1,0 +1,17 @@
+version: '3.9'
+
+services:
+  my_runner:
+    restart: unless-stopped
+    image: myoung34/github-runner:ubuntu-noble
+    environment:
+      RUNNER_NAME: ${GH_RUNNER_NAME}
+      RUNNER_SCOPE: repo
+      REPO_URL: ${GH_RUNNER_REPO}
+      LABELS: my-runner
+      ACCESS_TOKEN: ${GH_PAT}
+      EPHEMERAL: 1
+      RUN_AS_ROOT: false
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+
