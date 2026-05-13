@@ -1,5 +1,3 @@
-version: '3.9'
-
 services:
   my_runner:
     restart: unless-stopped
@@ -12,6 +10,4 @@ services:
       ACCESS_TOKEN: ${GH_RUNNER_PAT}
       EPHEMERAL: 1
       RUN_AS_ROOT: false
-    volumes:
-      - /var/run/docker.sock:/var/run/docker.sock
 
